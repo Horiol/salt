@@ -155,8 +155,8 @@ def list_pkgs(*packages):
     '''
     pkgs = {}
     cmd = 'dpkg -l {0}'.format(' '.join(packages))
-    out = __salt__['cmd.run_all'](cmd, python_shell=False)
-    if out['retcode'] != 0:
+    out = __salt__["cmd.run_all"](cmd, python_shell=False)
+    if out["retcode"] != 0:
         msg = 'Error:  ' + out['stderr']
         log.error(msg)
         return msg
